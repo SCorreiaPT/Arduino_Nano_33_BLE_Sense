@@ -21,39 +21,82 @@ Peripherals
 - LPS22HB, Piezoresistive absolute pressure sensor that functions as a digital output barometer
 - MP34DT05, Ultra-compact, low-power, omnidirectional, digital MEMS microphone
 
- * Author: scorr
+ * Author: SCorreia
  */ 
 
 #include <Arduino_LSM9DS1.h>	// IMU LSM9DS1 9DOF
+/**
+  Accelerometer range is set at [-4, +4]g -/+0.122 mg.
+  Gyroscope range is set at [-2000, +2000] dps +/-70 mdps.
+  Magnetometer range is set at [-400, +400] uT +/-0.014 uT.
 
-
+  Accelerometer Output data rate is fixed at 104 Hz.
+  Gyroscope Output data rate is fixed at 104 Hz.
+  Magnetometer Output data rate is fixed at 20 Hz.
+**/
+  float x, y, z;
 
 
 void setup()
 {
-	Serial.begin(115200);								// Serial communications for debugging
+  // Initializes the DEBUG Interface
+	Serial.begin(115200);								          // Serial communications for debugging
   delay(3000);
-	
-// set LED pin to output mode
-pinMode(LEDR, OUTPUT);
-pinMode(LEDG, OUTPUT);
-pinMode(LEDB, OUTPUT);
-pinMode(LED_BUILTIN, OUTPUT);
+  Serial.println("Arduino Nano BLE Sense...");	// Initialization message
 
-	Serial.println("Arduino Nano BLE Sense...");	// Initialization message
+  // set LED pin to Output Mode
+  pinMode(LEDR, OUTPUT);
+  pinMode(LEDG, OUTPUT);
+  pinMode(LEDB, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
 
-digitalWrite(LED_BUILTIN, LOW);         // when the central disconnects, turn off the LED
-digitalWrite(LEDR, HIGH);          // will turn the LED off
-digitalWrite(LEDG, HIGH);        // will turn the LED off
-digitalWrite(LEDB, HIGH);         // will turn the LED off
+	// Turn OFF all LEDs
+  digitalWrite(LED_BUILTIN, LOW);         
+  digitalWrite(LEDR, HIGH);          
+  digitalWrite(LEDG, HIGH);        
+  digitalWrite(LEDB, HIGH);         
 	
-	delay(3000);
+	delay(1000);
 	
-digitalWrite(LED_BUILTIN, HIGH);         // when the central disconnects, turn off the LED
-digitalWrite(LEDR, LOW);          // will turn the LED off
-digitalWrite(LEDG, LOW);        // will turn the LED off
-digitalWrite(LEDB, LOW);         // will turn the LED off
+  // LED RED ON, Builtin LED flashing
+  digitalWrite(LED_BUILTIN, HIGH);         
+  digitalWrite(LEDR, LOW);          
+  digitalWrite(LEDG, HIGH);        
+  digitalWrite(LEDB, HIGH);   
+
+  delay(1000);
+
+  // LED GREEN ON, Builtin LED flashing
+  digitalWrite(LED_BUILTIN, LOW);         
+  digitalWrite(LEDR, HIGH);          
+  digitalWrite(LEDG, LOW);        
+  digitalWrite(LEDB, HIGH);     
+
+  delay(1000);
+
+  // LED BLUE ON, Builtin LED flashing
+  digitalWrite(LED_BUILTIN, HIGH);         
+  digitalWrite(LEDR, HIGH);          
+  digitalWrite(LEDG, HIGH);        
+  digitalWrite(LEDB, LOW);    
+
+  delay(1000);
+
+  // LED RGB ON, Builtin LED flashing
+  digitalWrite(LED_BUILTIN, LOW);         
+  digitalWrite(LEDR, LOW);          
+  digitalWrite(LEDG, LOW);        
+  digitalWrite(LEDB, LOW); 
+
+  delay(1000);
+
+  // LED RGB OFF, Builtin LED OFF
+  digitalWrite(LED_BUILTIN, LOW);         
+  digitalWrite(LEDR, HIGH);          
+  digitalWrite(LEDG, HIGH);        
+  digitalWrite(LEDB, HIGH);  
 	
+  // Accelerometer Application
 	if (!IMU.begin())
 	{
 		Serial.println("Error initializing IMU sensor [LSM9DS1]");
@@ -61,12 +104,58 @@ digitalWrite(LEDB, LOW);         // will turn the LED off
 		while(1);									// Block initialization (Reset needed)
 	}
 	Serial.println("IMU sensor initialized ...");	// Hardware sensor LSM9DS1 initialized
-		
+  
+  // Acc
+  Serial.print("Accelerometer sample rate = ");
+  Serial.print(IMU.accelerationSampleRate());
+  Serial.println("Hz");
+  
+  // Gyro
+  Serial.print("Gyroscope sample rate = ");
+  Serial.print(IMU.gyroscopeSampleRate());
+  Serial.println(" Hz");
+  Serial.println();
+  Serial.println("Gyroscope in degrees/second");
+
+  Serial.println();
+
 }
 
 void loop()
 {
 
-	  /* add main program code here, this code starts again each time it ends */
+  // LSM9DS1 Inertial Measurement Unit Readings
+  Serial.println();
+  Serial.println("*** LSM9DS1 Inertial Measurement Unit ***");
+
+  // Reads acceleration in all three directions
+  if (IMU.accelerationAvailable()) {
+    IMU.readAcceleration(x, y, z);
+    Serial.println();
+    Serial.print("Acceleration in G's =>"); Serial.print('\t');
+    Serial.print("X = "); Serial.print(x); Serial.print('\t');
+    Serial.print("Y = "); Serial.print(y); Serial.print('\t');
+    Serial.print("Z = "); Serial.print(z);
+  }
+
+  // Reads angular velocity in all three directions
+  if (IMU.gyroscopeAvailable()) {
+    IMU.readGyroscope(x, y, z);
+    Serial.println();
+    Serial.print("Gyroscope in degrees/second =>"); Serial.print('\t');
+    Serial.print("X = "); Serial.print(x); Serial.print('\t');
+    Serial.print("Y = "); Serial.print(y); Serial.print('\t');
+    Serial.print("Z = "); Serial.print(z);    
+  }
+
+  // read magnetic field in all three directions
+  IMU.readMagneticField(x, y, z);
+  Serial.println();
+  Serial.print("Magnetic Field in uT =>"); Serial.print('\t');
+  Serial.print("X = "); Serial.print(x); Serial.print('\t');
+  Serial.print("Y = "); Serial.print(y); Serial.print('\t');
+  Serial.print("Z = "); Serial.print(z);   
+
+  delay(1000);
 
 }
