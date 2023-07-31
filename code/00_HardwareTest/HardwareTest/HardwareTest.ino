@@ -36,9 +36,27 @@ Peripherals
 **/
   float x, y, z;
 
+#include <Arduino_HTS221.h>
+/**
+  Humidity accuracy: ± 3.5% rH, 20 to +80% rH
+  Humidity range: 0 to 100 %
+  Temperature accuracy: ± 0.5 °C,15 to +40 °C
+  Temperature range: -40 to 120°C
+**/
+float temperature;
+float humidity;
+
+
 
 void setup()
 {
+
+
+  // mbed_stats_heap_t 
+
+
+
+
   // Initializes the DEBUG Interface
 	Serial.begin(115200);								          // Serial communications for debugging
   delay(3000);
@@ -103,7 +121,7 @@ void setup()
 		Serial.println("Reset needed");
 		while(1);									// Block initialization (Reset needed)
 	}
-	Serial.println("IMU sensor initialized ...");	// Hardware sensor LSM9DS1 initialized
+	Serial.println("IMU sensor initialized ... OK");	// Hardware sensor LSM9DS1 initialized
   
   // Acc
   Serial.print("Accelerometer sample rate = ");
@@ -119,6 +137,15 @@ void setup()
 
   Serial.println();
 
+
+  if (!HTS.begin()) {
+    Serial.println("Failed to initialize humidity temperature sensor!");
+    Serial.println("Reset needed");
+    while (1);
+  }
+  Serial.println("Humidity Temperature sensor initialized ... OK");
+
+
 }
 
 void loop()
@@ -131,30 +158,40 @@ void loop()
   // Reads acceleration in all three directions
   if (IMU.accelerationAvailable()) {
     IMU.readAcceleration(x, y, z);
-    Serial.println();
     Serial.print("Acceleration in G's =>"); Serial.print('\t');
     Serial.print("X = "); Serial.print(x); Serial.print('\t');
     Serial.print("Y = "); Serial.print(y); Serial.print('\t');
     Serial.print("Z = "); Serial.print(z);
+    Serial.println();
   }
 
   // Reads angular velocity in all three directions
   if (IMU.gyroscopeAvailable()) {
     IMU.readGyroscope(x, y, z);
-    Serial.println();
     Serial.print("Gyroscope in degrees/second =>"); Serial.print('\t');
     Serial.print("X = "); Serial.print(x); Serial.print('\t');
     Serial.print("Y = "); Serial.print(y); Serial.print('\t');
-    Serial.print("Z = "); Serial.print(z);    
+    Serial.print("Z = "); Serial.print(z); Serial.println();   
   }
 
   // read magnetic field in all three directions
   IMU.readMagneticField(x, y, z);
-  Serial.println();
   Serial.print("Magnetic Field in uT =>"); Serial.print('\t');
   Serial.print("X = "); Serial.print(x); Serial.print('\t');
   Serial.print("Y = "); Serial.print(y); Serial.print('\t');
-  Serial.print("Z = "); Serial.print(z);   
+  Serial.print("Z = "); Serial.print(z); Serial.println();  
+
+  // LSM9DS1 Inertial Measurement Unit Readings
+  Serial.println();
+  Serial.println("*** HTS221 Temperature and Humidity Sensor ***");
+
+  // Read all the HTS221 sensor values
+  temperature = HTS.readTemperature();
+  humidity    = HTS.readHumidity();
+
+  // Print each of the sensor values
+  Serial.print("Temperature = "); Serial.print(temperature); Serial.print(" °C"); Serial.print('\t');
+  Serial.print("Humidity    = "); Serial.print(humidity); Serial.println(" %"); Serial.println();
 
   delay(1000);
 
