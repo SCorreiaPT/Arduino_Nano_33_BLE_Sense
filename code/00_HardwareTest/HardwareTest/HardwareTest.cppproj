@@ -29,15 +29,15 @@
     <ExternalProgrammingToolCommand />
     <AsfFrameworkConfig>
       <framework-data>
-  <options />
-  <configurations />
-  <files />
-  <documentation help="" />
-  <offline-documentation help="" />
-  <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.44.1" />
-  </dependencies>
-</framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.44.1" />
+        </dependencies>
+      </framework-data>
     </AsfFrameworkConfig>
     <preserveEEPROM>true</preserveEEPROM>
     <ResetRule>0</ResetRule>
@@ -69,7 +69,6 @@
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>../../../HardwareTest</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/cores/arduino</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/cores/arduino/api</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/cores/arduino/as_mbed_library</Value>
@@ -78,12 +77,6 @@
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/variants/ARDUINO_NANO33BLE</Value>
       <Value>C:/Users/scorr/OneDrive/Documentos/Arduino/libraries/Arduino_LSM9DS1/src</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/libraries/Wire</Value>
-      <Value>C://Users//scorr//Documents//GitHub//Arduino_Nano_33_BLE_Sense//code//00_HardwareTest//HardwareTest//HardwareTest</Value>
-      <Value>C://Users//scorr//AppData//Local//ARDUIN~1//packages//arduino//hardware//MBED_N~1//35FE94~1.1//cores//arduino</Value>
-      <Value>C://Users//scorr//AppData//Local//ARDUIN~1//packages//arduino//hardware//MBED_N~1//35FE94~1.1//variants//ARDUIN~1</Value>
-      <Value>C://PROGRA~2//Atmel//Studio//7.0//EXTENS~1//0r0hjdci.ce4//MICROP~1//default//DEBUGG~1//VM_DBG</Value>
-      <Value>C://Users//scorr//OneDrive//DOCUME~1//Arduino//LIBRAR~1//AR6C41~1//src</Value>
-      <Value>C://Users//scorr//AppData//Local//ARDUIN~1//packages//arduino//hardware//MBED_N~1//35FE94~1.1//LIBRAR~1//Wire</Value>
       <Value>C://Users//scorr//AppData//Local//arduino15//packages//arduino//hardware//mbed_nano//3.5.1//cores//arduino/api/deprecated</Value>
       <Value>C://Users//scorr//AppData//Local//arduino15//packages//arduino//hardware//mbed_nano//3.5.1//cores//arduino/api/deprecated-avr-comp</Value>
       <Value>C://Users//scorr//AppData//Local//arduino15//packages//arduino//hardware//mbed_nano//3.5.1//cores//arduino</Value>
@@ -158,7 +151,6 @@
   </avrgcccpp.compiler.symbols.DefSymbols>
   <avrgcccpp.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>../../../HardwareTest</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/cores/arduino</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/cores/arduino/api</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/cores/arduino/as_mbed_library</Value>
@@ -167,12 +159,6 @@
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/variants/ARDUINO_NANO33BLE</Value>
       <Value>C:/Users/scorr/OneDrive/Documentos/Arduino/libraries/Arduino_LSM9DS1/src</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/libraries/Wire</Value>
-      <Value>C://Users//scorr//Documents//GitHub//Arduino_Nano_33_BLE_Sense//code//00_HardwareTest//HardwareTest//HardwareTest</Value>
-      <Value>C://Users//scorr//AppData//Local//ARDUIN~1//packages//arduino//hardware//MBED_N~1//35FE94~1.1//cores//arduino</Value>
-      <Value>C://Users//scorr//AppData//Local//ARDUIN~1//packages//arduino//hardware//MBED_N~1//35FE94~1.1//variants//ARDUIN~1</Value>
-      <Value>C://PROGRA~2//Atmel//Studio//7.0//EXTENS~1//0r0hjdci.ce4//MICROP~1//default//DEBUGG~1//VM_DBG</Value>
-      <Value>C://Users//scorr//OneDrive//DOCUME~1//Arduino//LIBRAR~1//AR6C41~1//src</Value>
-      <Value>C://Users//scorr//AppData//Local//ARDUIN~1//packages//arduino//hardware//MBED_N~1//35FE94~1.1//LIBRAR~1//Wire</Value>
       <Value>C://Users//scorr//AppData//Local//arduino15//packages//arduino//hardware//mbed_nano//3.5.1//cores//arduino/api/deprecated</Value>
       <Value>C://Users//scorr//AppData//Local//arduino15//packages//arduino//hardware//mbed_nano//3.5.1//cores//arduino/api/deprecated-avr-comp</Value>
       <Value>C://Users//scorr//AppData//Local//arduino15//packages//arduino//hardware//mbed_nano//3.5.1//cores//arduino</Value>
@@ -278,7 +264,6 @@
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>../../../HardwareTest</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/cores/arduino</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/cores/arduino/api</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/cores/arduino/as_mbed_library</Value>
@@ -287,12 +272,6 @@
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/variants/ARDUINO_NANO33BLE</Value>
       <Value>C:/Users/scorr/OneDrive/Documentos/Arduino/libraries/Arduino_LSM9DS1/src</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/libraries/Wire</Value>
-      <Value>C://Users//scorr//Documents//GitHub//Arduino_Nano_33_BLE_Sense//code//00_HardwareTest//HardwareTest//HardwareTest</Value>
-      <Value>C://Users//scorr//AppData//Local//ARDUIN~1//packages//arduino//hardware//MBED_N~1//35FE94~1.1//cores//arduino</Value>
-      <Value>C://Users//scorr//AppData//Local//ARDUIN~1//packages//arduino//hardware//MBED_N~1//35FE94~1.1//variants//ARDUIN~1</Value>
-      <Value>C://PROGRA~2//Atmel//Studio//7.0//EXTENS~1//0r0hjdci.ce4//MICROP~1//default//DEBUGG~1//VM_DBG</Value>
-      <Value>C://Users//scorr//OneDrive//DOCUME~1//Arduino//LIBRAR~1//AR6C41~1//src</Value>
-      <Value>C://Users//scorr//AppData//Local//ARDUIN~1//packages//arduino//hardware//MBED_N~1//35FE94~1.1//LIBRAR~1//Wire</Value>
       <Value>C://Users//scorr//AppData//Local//arduino15//packages//arduino//hardware//mbed_nano//3.5.1//cores//arduino/api/deprecated</Value>
       <Value>C://Users//scorr//AppData//Local//arduino15//packages//arduino//hardware//mbed_nano//3.5.1//cores//arduino/api/deprecated-avr-comp</Value>
       <Value>C://Users//scorr//AppData//Local//arduino15//packages//arduino//hardware//mbed_nano//3.5.1//cores//arduino</Value>
@@ -367,7 +346,6 @@
   </avrgcccpp.compiler.symbols.DefSymbols>
   <avrgcccpp.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>../../../HardwareTest</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/cores/arduino</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/cores/arduino/api</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/cores/arduino/as_mbed_library</Value>
@@ -376,12 +354,6 @@
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/variants/ARDUINO_NANO33BLE</Value>
       <Value>C:/Users/scorr/OneDrive/Documentos/Arduino/libraries/Arduino_LSM9DS1/src</Value>
       <Value>C:/Users/scorr/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/3.5.1/libraries/Wire</Value>
-      <Value>C://Users//scorr//Documents//GitHub//Arduino_Nano_33_BLE_Sense//code//00_HardwareTest//HardwareTest//HardwareTest</Value>
-      <Value>C://Users//scorr//AppData//Local//ARDUIN~1//packages//arduino//hardware//MBED_N~1//35FE94~1.1//cores//arduino</Value>
-      <Value>C://Users//scorr//AppData//Local//ARDUIN~1//packages//arduino//hardware//MBED_N~1//35FE94~1.1//variants//ARDUIN~1</Value>
-      <Value>C://PROGRA~2//Atmel//Studio//7.0//EXTENS~1//0r0hjdci.ce4//MICROP~1//default//DEBUGG~1//VM_DBG</Value>
-      <Value>C://Users//scorr//OneDrive//DOCUME~1//Arduino//LIBRAR~1//AR6C41~1//src</Value>
-      <Value>C://Users//scorr//AppData//Local//ARDUIN~1//packages//arduino//hardware//MBED_N~1//35FE94~1.1//LIBRAR~1//Wire</Value>
       <Value>C://Users//scorr//AppData//Local//arduino15//packages//arduino//hardware//mbed_nano//3.5.1//cores//arduino/api/deprecated</Value>
       <Value>C://Users//scorr//AppData//Local//arduino15//packages//arduino//hardware//mbed_nano//3.5.1//cores//arduino/api/deprecated-avr-comp</Value>
       <Value>C://Users//scorr//AppData//Local//arduino15//packages//arduino//hardware//mbed_nano//3.5.1//cores//arduino</Value>

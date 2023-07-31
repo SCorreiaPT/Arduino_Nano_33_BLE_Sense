@@ -26,41 +26,35 @@ Peripherals
 
 #include <Arduino_LSM9DS1.h>	// IMU LSM9DS1 9DOF
 
-#define LED_RGB_R	5
-#define LED_RGB_G	4
-#define	LED_RGB_B	43
-#define LED_DL1		1
-#define LED_DL2		33
 
-#define LED_BUILTIN	13
+
 
 void setup()
 {
 	Serial.begin(115200);								// Serial communications for debugging
+  delay(3000);
+	
+// set LED pin to output mode
+pinMode(LEDR, OUTPUT);
+pinMode(LEDG, OUTPUT);
+pinMode(LEDB, OUTPUT);
+pinMode(LED_BUILTIN, OUTPUT);
+
 	Serial.println("Arduino Nano BLE Sense...");	// Initialization message
-	
-	pinMode(LED_DL1,OUTPUT);
-	pinMode(LED_DL2,OUTPUT);
-	pinMode(LED_RGB_R,OUTPUT);
-	pinMode(LED_RGB_G,OUTPUT);
-	pinMode(LED_RGB_B,OUTPUT);
-	
-	digitalWrite(LED_DL1,HIGH);
-	digitalWrite(LED_DL2,HIGH);
-	digitalWrite(LED_RGB_R,LOW);
-	digitalWrite(LED_RGB_G,LOW);
-	digitalWrite(LED_RGB_B,LOW);
+
+digitalWrite(LED_BUILTIN, LOW);         // when the central disconnects, turn off the LED
+digitalWrite(LEDR, HIGH);          // will turn the LED off
+digitalWrite(LEDG, HIGH);        // will turn the LED off
+digitalWrite(LEDB, HIGH);         // will turn the LED off
 	
 	delay(3000);
 	
-	digitalWrite(LED_DL1,LOW);
-	digitalWrite(LED_DL2,LOW);
-	digitalWrite(LED_RGB_R,HIGH);
-	digitalWrite(LED_RGB_G,HIGH);
-	digitalWrite(LED_RGB_B,HIGH);
+digitalWrite(LED_BUILTIN, HIGH);         // when the central disconnects, turn off the LED
+digitalWrite(LEDR, LOW);          // will turn the LED off
+digitalWrite(LEDG, LOW);        // will turn the LED off
+digitalWrite(LEDB, LOW);         // will turn the LED off
 	
-	char ErrorCode = IMU.begin();
-	if (!ErrorCode)
+	if (!IMU.begin())
 	{
 		Serial.println("Error initializing IMU sensor [LSM9DS1]");
 		Serial.println("Reset needed");
